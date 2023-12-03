@@ -7,14 +7,15 @@ import { createShapes } from './components/shapes.js';
 import { createCamera } from './components/camera.js';
 import { createLights } from './components/lights.js';
 import { createScene } from './components/scene.js';
-// import { createEnvMap } from './components/envMap.js';
-// import { createMeshGroup } from './components/meshGroup.js';
+import { createEnvMap } from './components/envMap.js';
+import { createMeshGroup } from './components/meshGroup.js';
 // import { Train } from './components/Train/Train.js';
-// import { loadBirds } from './components/Birds/birds.js';
+import { loadBirds } from './components/Birds/birds.js';
 // Helpers
-// import { createGUI } from './components/lilgui.js'
-// import { createAxesHelper } from './components/helpers.js';
-// import { createGridHelper } from './components/helpers.js';
+import { createGUI } from './components/lilgui.js'
+import { createAxesHelper } from './components/helpers.js';
+import { createGridHelper } from './components/helpers.js';
+
 // Systems
 import { createControls } from './systems/controls.js';
 import { createRenderer } from './systems/renderer.js';
@@ -51,8 +52,8 @@ class World {
             spotLightHelper,
             directionalLightCameraHelper,
         } = createLights();
-        // const envMap = createEnvMap();
-        // const sphereMeshGroup = createMeshGroup();
+        const envMap = createEnvMap();
+        const sphereMeshGroup = createMeshGroup();
         // const train = new Train();
         
         
@@ -60,12 +61,12 @@ class World {
         loop.updatables.push(cube);
         loop.updatables.push(controls);
         loop.updatables.push(shapes);
-        // loop.updatables.push(sphereMeshGroup);
+        loop.updatables.push(sphereMeshGroup);
         // loop.updatables.push(train);
 
 
-        // const axesHelper = createAxesHelper();
-        // const gridHelper = createGridHelper();
+        const axesHelper = createAxesHelper();
+        const gridHelper = createGridHelper();
 
 
         controls.addEventListener('change', () => {
@@ -76,28 +77,28 @@ class World {
         scene.add(
             shapes,
             directionalLight,
-            ambientLight,
+            // ambientLight,
             pointLight,
             spotLight,
-            pointLightHelper,
-            spotLightHelper,
-            directionalLightCameraHelper,
+            // pointLightHelper,
+            // spotLightHelper,
+            // directionalLightCameraHelper,
             sphere,
             cube,
             plane,
         );
-        // scene.add(envMap, sphereMeshGroup, train);
-        // scene.add(axesHelper, gridHelper);
+        scene.add(envMap, sphereMeshGroup, /*train*/);
+        scene.add(axesHelper, gridHelper);
 
 
-        //const gui = createGUI(ambientLight);        
+        const gui = createGUI(directionalLight);        
         const resizer = new Resizer(container, camera, renderer);
     }
 
     async init() {
-        // const { parrot, flamingo, stork } = await loadBirds();
-        // scene.add(parrot, flamingo, stork);
-        // loop.updatables.push(parrot, flamingo, stork);
+        const { parrot, flamingo, stork } = await loadBirds();
+        scene.add(parrot, flamingo, stork);
+        loop.updatables.push(parrot, flamingo, stork);
     }
 
     render() {

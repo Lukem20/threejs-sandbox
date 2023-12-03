@@ -47,7 +47,7 @@ function createCube () {
             aoMapIntensity: 1,
             metalnessMap: textureMetallic,
             alphaMap: textureAlpha,
-            transparent: true,
+            transparent: false,
         });
 
         return material;

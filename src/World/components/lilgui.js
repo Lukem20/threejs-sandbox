@@ -6,7 +6,7 @@ function createGUI (ambientLight) {
     gui
         .add(ambientLight, 'intensity')
         .min(0)
-        .max(1)
+        .max(5)
         .step(0.01)
 }
 
