@@ -41,6 +41,7 @@ function createText(scene) {
             // );
 
             const mesh = new Mesh(textGeometry, textMaterial);
+            mesh.position.z = -7;
             scene.add(mesh);
         }
     )

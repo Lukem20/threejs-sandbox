@@ -13,12 +13,12 @@ function createEnvMap () {
         const cubeTextureLoader = new CubeTextureLoader();
 
         const envMapTexture = cubeTextureLoader.load([
-            'src/World/assets/textures/environmentMaps/0/px.jpg',
-            'src/World/assets/textures/environmentMaps/0/nx.jpg',
-            'src/World/assets/textures/environmentMaps/0/py.jpg',
-            'src/World/assets/textures/environmentMaps/0/ny.jpg',
-            'src/World/assets/textures/environmentMaps/0/pz.jpg',
-            'src/World/assets/textures/environmentMaps/0/nz.jpg',
+            '/assets/textures/environmentMaps/0/px.jpg',
+            '/assets/textures/environmentMaps/0/nx.jpg',
+            '/assets/textures/environmentMaps/0/py.jpg',
+            '/assets/textures/environmentMaps/0/ny.jpg',
+            '/assets/textures/environmentMaps/0/pz.jpg',
+            '/assets/textures/environmentMaps/0/nz.jpg',
         ]);
 
         const material = new MeshStandardMaterial({ 

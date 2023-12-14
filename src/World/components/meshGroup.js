@@ -10,7 +10,7 @@ import {
 function createMeshGroup() {
     // Loading texture for matcap material
     const textureLoader = new TextureLoader();
-    const matcapTexture = textureLoader.load('src/World/assets/textures/matcaps/8.png')
+    const matcapTexture = textureLoader.load('/assets/textures/matcaps/8.png')
 
     // Creating a group with a sphere and its clones.
     const group = new Group();

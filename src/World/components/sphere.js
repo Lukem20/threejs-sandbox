@@ -35,7 +35,7 @@ function createSphere () {
     const material = createMaterial();
     const sphere = new Mesh(geometry, material);
 
-    sphere.position.set(4, 0, 3);
+    sphere.position.set(9, 0, 0);
     sphere.castShadow = true;
 
     const radiansPerSecond = MathUtils.degToRad(30);
